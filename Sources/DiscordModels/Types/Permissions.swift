@@ -44,6 +44,15 @@ public enum Permission: Int, Sendable, Hashable, Codable {
     case moderateMembers = 40
 }
 
+/// https://discord.com/developers/docs/resources/channel#channel-object
+public struct ChannelObject: Sendable, Codable {
+    var id: String
+    var type: Int
+    var guild_id: String?
+    var name: String
+    var topic: String
+}
+
 /// https://discord.com/developers/docs/topics/permissions#role-object
 public struct Role: Sendable, Codable {
     
