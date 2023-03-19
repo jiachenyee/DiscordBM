@@ -3,6 +3,18 @@ import NIOFoundationCompat
 
 public enum RequestBody {
     
+    public struct PermissionOverwrite: Sendable, Codable, ValidatablePayload {
+        
+        var id: String
+        var type: Int
+        
+        var allow: String
+        var deny: String
+        
+        public func validate() throws {
+        }
+    }
+    
     public struct CreateGuildChannel: Sendable, Codable, ValidatablePayload {
         public var name: String
         public var type: Int
@@ -15,12 +27,14 @@ public enum RequestBody {
         public var rate_limit_per_user: Int?
         public var position: Int
         
+        public var permission_overwrites: [PermissionOverwrite]
+        
         public var parent_id: String
         public var nsfw: Bool
         public var default_auto_archive_duration: Int?
         
         @inlinable
-        public init(name: String, type: Int, topic: String, bitrate: Int? = nil, user_limit: Int? = nil, rate_limit_per_user: Int? = nil, position: Int, parent_id: String, nsfw: Bool, default_auto_archive_duration: Int? = nil) {
+        public init(name: String, type: Int, topic: String, bitrate: Int? = nil, user_limit: Int? = nil, rate_limit_per_user: Int? = nil, position: Int, parent_id: String, nsfw: Bool, default_auto_archive_duration: Int? = nil, permission_overwrites: [PermissionOverwrite]) {
             self.name = name
             self.type = type
             self.topic = topic
@@ -31,6 +45,7 @@ public enum RequestBody {
             self.parent_id = parent_id
             self.nsfw = nsfw
             self.default_auto_archive_duration = default_auto_archive_duration
+            self.permission_overwrites = permission_overwrites
         }
         
         @inlinable
