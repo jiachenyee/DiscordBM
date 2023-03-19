@@ -597,6 +597,18 @@ public extension DiscordClient {
         ))
     }
     
+    /// https://discord.com/developers/docs/resources/guild#create-guild-channel
+    @inlinable
+    func createGuildChannel(
+        guildId: String,
+        payload: RequestBody.CreateGuildChannel
+    ) async throws -> DiscordHTTPResponse {
+        let endpoint = Endpoint.createGuildChannel(
+            guildId: guildId
+        )
+        return try await self.send(request: .init(to: endpoint), payload: payload)
+    }
+    
     /// https://discord.com/developers/docs/resources/channel#create-reaction
     @inlinable
     func createReaction(

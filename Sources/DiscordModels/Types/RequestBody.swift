@@ -3,6 +3,40 @@ import NIOFoundationCompat
 
 public enum RequestBody {
     
+    public struct CreateGuildChannel: Sendable, Codable, ValidatablePayload {
+        public var name: String
+        public var type: Int
+        public var topic: String
+        
+        // Voice channels
+        public var bitrate: Int?
+        public var user_limit: Int?
+        
+        public var rate_limit_per_user: Int?
+        public var position: Int
+        
+        public var parent_id: String
+        public var nsfw: String
+        public var default_auto_archive_duration: Int?
+        
+        @inlinable
+        public init(name: String, type: Int, topic: String, bitrate: Int? = nil, user_limit: Int? = nil, rate_limit_per_user: Int? = nil, position: Int, parent_id: String, nsfw: String, default_auto_archive_duration: Int? = nil) {
+            self.name = name
+            self.type = type
+            self.topic = topic
+            self.bitrate = bitrate
+            self.user_limit = user_limit
+            self.rate_limit_per_user = rate_limit_per_user
+            self.position = position
+            self.parent_id = parent_id
+            self.nsfw = nsfw
+            self.default_auto_archive_duration = default_auto_archive_duration
+        }
+        
+        @inlinable
+        public func validate() throws { }
+    }
+    
     public struct CreateDM: Sendable, Codable, ValidatablePayload {
         public var recipient_id: String
         
