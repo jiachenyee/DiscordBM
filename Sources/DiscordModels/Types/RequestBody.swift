@@ -11,6 +11,13 @@ public enum RequestBody {
         var allow: String
         var deny: String
         
+        public init(id: String, type: Int, allow: String, deny: String) {
+            self.id = id
+            self.type = type
+            self.allow = allow
+            self.deny = deny
+        }
+        
         public func validate() throws {
         }
     }
