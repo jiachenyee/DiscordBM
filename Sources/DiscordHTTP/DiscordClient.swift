@@ -602,7 +602,7 @@ public extension DiscordClient {
     func createGuildChannel(
         guildId: String,
         payload: RequestBody.CreateGuildChannel
-    ) async throws -> DiscordClientResponse<ChannelObject> {
+    ) async throws -> DiscordClientResponse<DiscordChannel> {
         let endpoint = Endpoint.createGuildChannel(
             guildId: guildId
         )
