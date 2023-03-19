@@ -512,7 +512,7 @@ public enum Endpoint: Sendable {
         case let .CDNGuildMemberBanner(guildId, userId, banner):
             suffix = "guilds/\(guildId)/users/\(userId)/banners/\(banner)"
         case let .createGuildChannel(guildId):
-            suffix = "guilds/\(guildId)/channels/"
+            suffix = "guilds/\(guildId)/channels"
         }
         return suffix.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? suffix
     }
