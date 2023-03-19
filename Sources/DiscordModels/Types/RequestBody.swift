@@ -16,11 +16,11 @@ public enum RequestBody {
         public var position: Int
         
         public var parent_id: String
-        public var nsfw: String
+        public var nsfw: Bool
         public var default_auto_archive_duration: Int?
         
         @inlinable
-        public init(name: String, type: Int, topic: String, bitrate: Int? = nil, user_limit: Int? = nil, rate_limit_per_user: Int? = nil, position: Int, parent_id: String, nsfw: String, default_auto_archive_duration: Int? = nil) {
+        public init(name: String, type: Int, topic: String, bitrate: Int? = nil, user_limit: Int? = nil, rate_limit_per_user: Int? = nil, position: Int, parent_id: String, nsfw: Bool, default_auto_archive_duration: Int? = nil) {
             self.name = name
             self.type = type
             self.topic = topic
