@@ -8,10 +8,10 @@ public enum RequestBody {
         var id: String
         var type: Int
         
-        var allow: String
-        var deny: String
+        var allow: String?
+        var deny: String?
         
-        public init(id: String, type: Int, allow: String, deny: String) {
+        public init(id: String, type: Int, allow: String? = nil, deny: String? = nil) {
             self.id = id
             self.type = type
             self.allow = allow
