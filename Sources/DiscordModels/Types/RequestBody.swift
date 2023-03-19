@@ -34,7 +34,7 @@ public enum RequestBody {
         public var default_auto_archive_duration: Int?
         
         @inlinable
-        public init(name: String, type: Int, topic: String, bitrate: Int? = nil, user_limit: Int? = nil, rate_limit_per_user: Int? = nil, position: Int, parent_id: String, nsfw: Bool, default_auto_archive_duration: Int? = nil, permission_overwrites: [PermissionOverwrite]) {
+        public init(name: String, type: Int, topic: String, bitrate: Int? = nil, user_limit: Int? = nil, rate_limit_per_user: Int? = nil, position: Int, parent_id: String, nsfw: Bool, default_auto_archive_duration: Int? = nil, permission_overwrites: [PermissionOverwrite] = []) {
             self.name = name
             self.type = type
             self.topic = topic
