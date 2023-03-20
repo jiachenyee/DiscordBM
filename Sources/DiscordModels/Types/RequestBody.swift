@@ -28,7 +28,7 @@ public enum RequestBody {
         var mute: Bool?
         var deaf: Bool?
         
-        init(nick: String? = nil, roles: String? = nil, mute: Bool? = nil, deaf: Bool? = nil) {
+        public init(nick: String? = nil, roles: String? = nil, mute: Bool? = nil, deaf: Bool? = nil) {
             self.nick = nick
             self.roles = roles
             self.mute = mute
