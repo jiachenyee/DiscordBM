@@ -609,6 +609,16 @@ public extension DiscordClient {
         return try await self.send(request: .init(to: endpoint), payload: payload)
     }
     
+    @inlinable
+    func modifyGuildMember(
+        guildId: String,
+        userId: String,
+        payload: RequestBody.ModifyGuildMember
+    ) async throws -> DiscordHTTPResponse {
+        let endpoint = Endpoint.modifyGuildMember(id: guildId, userId: userId)
+        return try await self.send(request: .init(to: endpoint), payload: payload)
+    }
+    
     /// https://discord.com/developers/docs/resources/channel#create-reaction
     @inlinable
     func createReaction(
