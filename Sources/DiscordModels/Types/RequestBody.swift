@@ -153,6 +153,7 @@ public enum RequestBody {
             public var components: [Interaction.ActionRow]?
             public var attachments: [AttachmentSend]?
             public var files: [RawFile]?
+            public var title: String?
             
             enum CodingKeys: String, CodingKey {
                 case tts
@@ -164,7 +165,7 @@ public enum RequestBody {
                 case attachments
             }
             
-            public init(tts: Bool? = nil, content: String? = nil, embeds: [Embed]? = nil, allowedMentions: DiscordChannel.AllowedMentions? = nil, flags: [DiscordChannel.Message.Flag]? = nil, components: [Interaction.ActionRow]? = nil, attachments: [AttachmentSend]? = nil, files: [RawFile]? = nil) {
+            public init(tts: Bool? = nil, content: String? = nil, embeds: [Embed]? = nil, allowedMentions: DiscordChannel.AllowedMentions? = nil, flags: [DiscordChannel.Message.Flag]? = nil, components: [Interaction.ActionRow]? = nil, attachments: [AttachmentSend]? = nil, files: [RawFile]? = nil, title: String? = nil) {
                 self.tts = tts
                 self.content = content
                 self.embeds = embeds
@@ -173,6 +174,7 @@ public enum RequestBody {
                 self.components = components
                 self.attachments = attachments
                 self.files = files
+                self.title = title
             }
             
             public func validate() throws {
